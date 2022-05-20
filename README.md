@@ -18,7 +18,6 @@
 
     -   #### Returning Visitor Goals
 
-
         1. As a Returning Visitor, I want to be able to log in to my account.
         2. As a Returning Visitor, I want to see if there are any newly added posts.
         3. As a Returning Visitor, I want to be able to create posts.
@@ -26,11 +25,55 @@
 
     -   #### Frequent Visitor Goals
 
-
         1. As a Frequent Visitor, I want to be able to log in to my account.
         1. As a Frequent Visitor, I want to see if there are any newly added posts.
         1. As a Frequent Visitor, I want to be able to create new posts.
         1. As a Frequent Visitor, check how popular my posts have gotten.
 
+<hr>
 
+## Wireframes
+<details>
+<summary>Click here to see wireframes.</summary>
 
+<details>
+<summary>Homepage</summary>
+<img src="static/css/images/Homepage.png">
+</details>
+
+<details>
+<summary>Sign Up</summary>
+<img src="static/css/images/Sign_Up.png">
+</details>
+
+<details>
+<summary>Sign In</summary>
+<img src="static/css/images/Sign_In.png">
+</details>
+
+<details>
+<summary>Memes</summary>
+<img src="static/css/images/Memes.png">
+</details>
+
+<details>
+<summary>News</summary>
+<img src="static/css/images/News.png">
+</details>
+
+<details>
+<summary>Photography</summary>
+<img src="static/css/images/Photography.png">
+</details>
+
+<details>
+<summary>Comment Options</summary>
+<img src="static/css/images/Comment_Options.png">
+</details>
+
+<details>
+<summary>Comments</summary>
+<img src="static/css/images/Comments.png">
+</details>
+
+</details>
