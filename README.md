@@ -1,0 +1,1 @@
+<h1 align="center">Insight - News Website</h1>

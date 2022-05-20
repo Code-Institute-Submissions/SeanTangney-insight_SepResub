@@ -7,7 +7,7 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
+            <div class="row justify-content-center">
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -32,9 +32,9 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:1 %}
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 {% endif %}
                 {% endfor %}
 
