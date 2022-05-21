@@ -14,8 +14,6 @@ body {
     position: relative;
     height: 33vh;
     width: 100%;
-    /* border-top: 1px solid;
-    border-bottom: 1px solid; */
 }
 
 .image-container {
@@ -28,4 +26,34 @@ body {
 
 .masthead-image {
     position: relative;
+}
+
+/* Sign In Page */
+
+.account-card {
+    border: 1px solid #3083DC;
+    margin: 3%;
+    padding: 2.5em;
+    border-radius: 2%;
+    position: relative;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+
+.account-card>h1 {
+    color: #525152;
+    margin-bottom: 0.5em;
+    ;
+}
+
+
+.remove-decor {
+    text-decoration: none;
+    color: #3083DC;
+}
+
+
+.btn {
+    margin-top: 1em;
 }
