@@ -65,9 +65,5 @@ body {
 /* Sign Up Page */
 
 #signup_form {
-    text-align: left;
-}
-
-.sign-up-input {
-    align: right;
+    text-align: right;
 }
