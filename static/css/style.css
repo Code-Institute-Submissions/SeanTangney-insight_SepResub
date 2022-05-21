@@ -61,3 +61,13 @@ body {
 .btn {
     margin-top: 1em;
 }
+
+/* Sign Up Page */
+
+#signup_form {
+    text-align: left;
+}
+
+.sign-up-input {
+    align: right;
+}
