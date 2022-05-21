@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Redirects the user to the homepage after logging in/out
 LOGIN_REDIRECT_URL = '/'
