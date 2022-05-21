@@ -6,3 +6,26 @@ body {
     border: none;
     background-color: transparent;
 }
+
+.masthead {
+    margin-top: 15px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    height: 33vh;
+    width: 100%;
+    /* border-top: 1px solid;
+    border-bottom: 1px solid; */
+}
+
+.image-container {
+    position: relative;
+}
+
+.masthead-text {
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+}
