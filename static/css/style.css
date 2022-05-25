@@ -80,3 +80,11 @@ body {
 #signup_form {
     text-align: right;
 }
+
+@media only screen and (max-width: 768px) {
+    .post-detail-card {
+        width: 90vw;
+        margin: 0 5vw;
+    }
+
+}
