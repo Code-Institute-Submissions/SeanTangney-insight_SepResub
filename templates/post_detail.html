@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {% block content %}
-
 {% load crispy_forms_tags %}
 
 <div class="post-detail-card">
@@ -25,17 +24,20 @@
         <div class="row">
             <div class="col card mb-4  mt-3 left  top">
                 <div class="card-body">
-                    <p class="card-text "></p>
+                    <p class="card-text">
+                        {{ post.content | safe }}
+                    </p>
                     <div class="row">
 
                         <div class="col-1">
                             <!-- number of likes -->
-                            <strong class="text-secondary"><i class="far fa-heart"></i> </strong>
+                            <strong class="text-secondary"><i
+                                    class="far fa-heart"></i>{{ post.number_of_likes }}</strong>
                         </div>
                         <div class="col-1">
                             {% with comments.count as total_comments %}
                             <strong class="text-secondary"><i class="far fa-comments"></i>
-                            </strong>
+                                {{ total_comments }}</strong>
                             {% endwith %}
                         </div>
                     </div>
@@ -52,17 +54,17 @@
                 <h3>Comments:</h3>
                 <div class="card-body">
                     {% for comment in comments %}
-                    <div class="comments" style="padding: 10px;">
-                        <p class="font-weight-bold">
+                    <div class="comments">
+                        <p class=" font-weight-bold">
                             <!-- commenter's name  -->
-                            {{ comment.name }}
+                            u/{{ comment.name }}
                             <span class=" text-muted font-weight-normal">
                                 <!-- comment created date -->
                                 {{ comment.created_on }}
-                            </span> wrote:
+                            </span>
                         </p>
                         <!-- body of comment -->
-                        {{  comment.body | linebreaks }}
+                        {{ comment.body | linebreaks }}
                     </div>
                     <!-- for loop ends here -->
                     {% endfor %}
@@ -74,12 +76,16 @@
 
                     <h3>Comment:</h3>
                     <p>Posted by: {{ user.username }}</p>
-                    <form method="post" style="margin-top: 1.3em;">
+                    <form method="post">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-signup btn-lg">Post</button>
                     </form>
-
+                    {% endif %}
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Thanks for commenting!
+                    </div>
                     {% endif %}
 
                 </div>
