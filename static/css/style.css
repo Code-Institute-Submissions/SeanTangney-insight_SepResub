@@ -45,6 +45,12 @@ body {
     padding: 0;
 }
 
+.form-control {
+    background-color: #C3C3C3;
+    border-color: #3083DC;
+    border-width: 0.2em;
+}
+
 /* Sign In Page */
 
 .account-card {
