@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <div class="post-detail-card">
     <div class="masthead">
@@ -100,16 +101,20 @@
 
                         <h3>Write A Comment</h3>
                         <p>Posting as u/{{ user.username }}</p>
-                        <form method="post">
+                        <form class="comment-form" id="postComment" method="post">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-signup btn-lg">Post</button>
+                            <div class="submit-container">
+                                <button type="submit" class="btn btn-signup btn-lg submit-btn"
+                                    onclick="clear()">Post</button>
+                            </div>
                         </form>
                         {% endif %}
                         {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            Thanks for commenting!
+                        <div class="alert alert-success" role="alert" id="msg">
+                            <p>Thanks for commenting!</p>
                         </div>
+
                         {% endif %}
 
                     </div>

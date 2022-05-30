@@ -1,5 +1,7 @@
 body {
     background-color: #C3C3C3;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
 }
 
 .card {
@@ -12,7 +14,7 @@ body {
     overflow: hidden;
     display: inline-block;
     position: relative;
-    height: 33vh;
+    height: auto;
     width: 100%;
 }
 
@@ -32,6 +34,16 @@ body {
     position: relative;
 }
 
+.create-post-button {
+    border: 1px solid #EEF146;
+    border-radius: 5px;
+}
+
+.create-post-button:hover {
+    border-radius: 5px;
+    background-color: #EEF146
+}
+
 /* Post Detail */
 
 .post-detail-card {
@@ -49,6 +61,33 @@ body {
     background-color: #C3C3C3;
     border-color: #3083DC;
     border-width: 0.2em;
+}
+
+.btn-like {
+    border: none;
+    color: #6c757d;
+    background-color: #C3C3C3;
+}
+
+.col-1 {
+    width: auto;
+}
+
+.submit-container {
+    align-items: flex-end;
+    margin-left: 75%;
+}
+
+.submit-btn {
+    background-color: #C3C3C3;
+    border: 1px solid #3083DC;
+    border-radius: 5px;
+}
+
+
+.submit-btn:hover {
+    border-radius: 5px;
+    background-color: #3083DC;
 }
 
 /* Sign In Page */
