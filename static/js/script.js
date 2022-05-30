@@ -6,6 +6,5 @@ setTimeout(function () {
 
 
 function clear() {
-    var textarea = document.getElementById("id_body");
-    textarea.reset();
+    document.getElementById("id_body").value = "";
 }

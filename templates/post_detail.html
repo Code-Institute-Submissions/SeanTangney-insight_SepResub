@@ -101,20 +101,21 @@
 
                         <h3>Write A Comment</h3>
                         <p>Posting as u/{{ user.username }}</p>
-                        <form class="comment-form" id="postComment" method="post">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <div class="submit-container">
-                                <button type="submit" class="btn btn-signup btn-lg submit-btn"
-                                    onclick="clear()">Post</button>
-                            </div>
-                        </form>
-                        {% endif %}
+
                         {% if commented %}
                         <div class="alert alert-success" role="alert" id="msg">
                             <p>Thanks for commenting!</p>
                         </div>
+                        {% endif %}
 
+                        <form class="comment-form" id="postComment" method="post">
+                            {{ comment_form|crispy }}
+                            {% csrf_token %}
+                            <div class="submit-container">
+                                <button type="submit" class="btn btn-signup btn-lg submit-btn"
+                                    onsubmit="javascript:clear()">Post</button>
+                            </div>
+                        </form>
                         {% endif %}
 
                     </div>
