@@ -1,4 +1,4 @@
-from .models import Comment, Post, createPostModel
+from .models import Comment, Post
 from django import forms
 
 
@@ -8,10 +8,7 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-class createPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
-        model = createPostModel
-        fields = [
-            "title",
-            "body",
-        ]
+        model = Post
+        fields = ('title', 'body',)
