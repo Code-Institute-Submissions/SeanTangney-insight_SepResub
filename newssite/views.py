@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm
+from .models import Post, createPostModel
+from .forms import CommentForm, createPostForm
 
 
 class PostList(generic.ListView):
@@ -64,6 +64,18 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+
+
+def create_view(request, view):
+
+    context = {}
+
+    form = createPostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "create_view.html", context)
 
 
 class PostLike(View):

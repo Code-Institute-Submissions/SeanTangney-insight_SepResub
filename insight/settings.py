@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    'ckeditor',
     'widget_tweaks',
     'newssite',
 ]
