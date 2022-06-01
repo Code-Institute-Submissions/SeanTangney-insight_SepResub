@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.utils.text import slugify
 from .models import Post
 from .forms import CommentForm
 
@@ -82,8 +84,32 @@ class PostLike(View):
 class CreateView(View):
 
     def get(self, request):
+        """What happens for a GET request"""
+
         return render(
-            request, "create_view.html")
+            request, "create_view.html",)
 
     def post(self, request):
-        new_post = PostForm(request.POST, request.FILES)
+        """What happens for a POST request"""
+        create_view = CreateView(request.POST, request.FILES)
+
+        if create_view.is_valid():
+            Post = create_view.save(commit=False)
+            Post.author = Post.user
+            Post.slug = slugify('-'.join([Post.title,
+                                          str(Post.author)]),
+                                allow_unicode=False)
+            Post.save()
+            return redirect('create_post')
+        else:
+            messages.error(self.request, 'Please complete all required fields')
+            create_view = CreateView()
+
+        return render(
+            request,
+            "create_view.html",
+            {
+                "create_view": create_view
+
+            },
+        )

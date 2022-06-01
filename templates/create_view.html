@@ -5,16 +5,22 @@
 {% load crispy_forms_tags%}
 {% if user.is_authenticated %}
 
-<form method="POST" enctype="multipart/form-data">
 
-    <!-- Security token -->
-    {% csrf_token %}
+<div class="container">
+    <div class="row">
+        <div class="col-10 mt-3 offset-1 g-0">
+            <form method="POST" enctype="multipart/form-data">
 
-    <!-- Using the formset -->
-    {{ form.as_p }}
+                <!-- Security token -->
+                {% csrf_token %}
+                {{ create_view|crispy }}
 
-    <input type="submit" value="Submit">
-</form>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
 
 {% endif %}
 {% endblock content %}
