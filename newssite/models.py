@@ -14,7 +14,7 @@ class Post(models.Model):
     )
     updated_on = models.DateTimeField(auto_now=True)
     body = RichTextField(blank=True, null=True)
-    # content = models.TextField()
+    body = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)

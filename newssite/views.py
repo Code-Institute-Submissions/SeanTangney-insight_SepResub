@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils.text import slugify
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -84,14 +84,12 @@ class PostLike(View):
 class CreateView(View):
 
     def get(self, request):
-        """What happens for a GET request"""
 
         return render(
             request, "create_view.html",)
 
     def post(self, request):
-        """What happens for a POST request"""
-        create_view = CreateView(request.POST, request.FILES)
+        create_view = PostForm(request.POST, request.FILES)
 
         if create_view.is_valid():
             Post = create_view.save(commit=False)
@@ -100,16 +98,15 @@ class CreateView(View):
                                           str(Post.author)]),
                                 allow_unicode=False)
             Post.save()
-            return redirect('create_post')
+            return redirect('create-post')
         else:
-            messages.error(self.request, 'Please complete all required fields')
-            create_view = CreateView()
+            messages.error(self.request, 'Please complete required fields')
+            create_view = PostForm(data=request.POST)
 
         return render(
             request,
             "create_view.html",
             {
-                "create_view": create_view
-
+                "create_view": PostForm(),
             },
         )

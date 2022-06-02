@@ -2,25 +2,27 @@
 {% block content %}
 {% load static %}
 {% load cloudinary %}
-{% load crispy_forms_tags%}
+{% load crispy_forms_tags %}
+
+
 {% if user.is_authenticated %}
 
+<h3>Create A Post</h3>
+<p>Posting as u/{{ user.username }}</p>
 
-<div class="container">
-    <div class="row">
-        <div class="col-10 mt-3 offset-1 g-0">
-            <form method="POST" enctype="multipart/form-data">
-
-                <!-- Security token -->
-                {% csrf_token %}
-                {{ create_view|crispy }}
-
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
+{% if commented %}
+<div class="alert alert-success" role="alert" id="msg">
+    <p>Thanks For Posting</p>
 </div>
-
-
 {% endif %}
+
+<form class="create_view" method="post">
+    {{ create_view|crispy }}
+    {% csrf_token %}
+    <div class="submit-container">
+        <button type="submit" class="btn btn-signup btn-lg submit-btn" onsubmit="javascript:clear()">Post</button>
+    </div>
+</form>
+{% endif %}
+
 {% endblock content %}
