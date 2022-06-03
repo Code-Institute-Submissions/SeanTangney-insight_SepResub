@@ -103,6 +103,7 @@ class CreateView(View):
                                 allow_unicode=False)
             post.save()
 
+            messages.success(self.request, 'Thanks for Posting')
             return HttpResponseRedirect(reverse('create_view'))
 
         else:
@@ -113,6 +114,6 @@ class CreateView(View):
             request,
             "create_view.html",
             {
-                "create_view": PostForm()
+                "create_view": PostForm(),
             },
         )
