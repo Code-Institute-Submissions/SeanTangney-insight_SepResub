@@ -66,6 +66,7 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+        return HttpResponseRedirect(reverse('post_detail'))
 
 
 class PostLike(View):
