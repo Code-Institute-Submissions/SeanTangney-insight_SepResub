@@ -1,28 +1,29 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 {% load static %}
 {% load cloudinary %}
 {% load crispy_forms_tags %}
 
 
 {% if user.is_authenticated %}
+<div class="post-detail-card">
+    <div class="row">
+        <div class="col-md-12 card mb-12 mt-12">
+            <div class="card-body">
+                <h3>Create A Post</h3>
+                <p>Posting as u/{{ user.username }}</p>
 
-<h3>Create A Post</h3>
-<p>Posting as u/{{ user.username }}</p>
-
-{% if commented %}
-<div class="alert alert-success" role="alert" id="msg">
-    <p>Thanks For Posting</p>
-</div>
-{% endif %}
-
-<form class="create_view" method="post">
-    {{ create_view|crispy }}
-    {% csrf_token %}
-    <div class="submit-container">
-        <button type="submit" class="btn btn-signup btn-lg submit-btn" onsubmit="javascript:clear()">Post</button>
+                <form class="create_view" method="post">
+                    {{ create_view|crispy }}
+                    {% csrf_token %}
+                    <div class="submit-container">
+                        <button type="submit" class="btn btn-signup btn-lg submit-btn"
+                            onsubmit="javascript:clear()">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</form>
+</div>
 {% endif %}
 
 {% endblock content %}

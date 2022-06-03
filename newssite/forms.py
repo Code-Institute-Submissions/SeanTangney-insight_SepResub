@@ -9,13 +9,16 @@ class CommentForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
-    title = forms.CharField(max_length=50)
-    body = forms.CharField(max_length=200)
-
     class Meta:
-
         model = Post
-        fields = ('title', 'featured_image', 'body')
+        fields = ('title', 'featured_image', 'body',)
+
+    title = forms.CharField(max_length=50)
+    body = forms.CharField(
+        max_length=200,
+        widget=forms.Textarea(),
+        help_text="Write your message here!"
+        )
 
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)

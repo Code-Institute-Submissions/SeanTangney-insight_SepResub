@@ -78,27 +78,33 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return redirect(reverse('post_detail', args=[slug]))
 
 
 class CreateView(View):
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
 
         return render(
-            request, "create_view.html",)
+            request, "create_view.html",
+            {
+                "create_view": PostForm()
+            },
+            )
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         create_view = PostForm(request.POST, request.FILES)
 
         if create_view.is_valid():
-            Post = create_view.save(commit=False)
-            Post.author = Post.user
-            Post.slug = slugify('-'.join([Post.title,
-                                          str(Post.author)]),
+            post = create_view.save(commit=False)
+            post.author = request.user
+            post.slug = slugify('-'.join([post.title,
+                                          str(post.author)]),
                                 allow_unicode=False)
-            Post.save()
-            return redirect('create-post')
+            post.save()
+
+            return HttpResponseRedirect(reverse('create_view'))
+
         else:
             messages.error(self.request, 'Please complete required fields')
             create_view = PostForm(data=request.POST)
@@ -107,6 +113,6 @@ class CreateView(View):
             request,
             "create_view.html",
             {
-                "create_view": PostForm(),
+                "create_view": PostForm()
             },
         )
