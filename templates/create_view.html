@@ -12,7 +12,7 @@
                 <h3>Create A Post</h3>
                 <p>Posting as u/{{ user.username }}</p>
 
-                <form class="create_view" method="post">
+                <form class="create_view" method="post" enctype="multipart/form-data">
                     {{ create_view|crispy }}
                     {% csrf_token %}
                     <div class="submit-container">
