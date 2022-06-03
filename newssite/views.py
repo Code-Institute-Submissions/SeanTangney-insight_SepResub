@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.views.generic import UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils.text import slugify
@@ -118,3 +119,10 @@ class CreateView(View):
                 "create_view": PostForm(),
             },
         )
+
+
+class EditView(UpdateView):
+    """ Edit Post """
+    model = Post
+    template_name = 'edit_view.html'
+    form_class = PostForm

@@ -69,6 +69,11 @@
         </div>
         <div class="row">
             <div class="col">
+                {% if user.is_authenticated and user.id == post.author.id %}
+                <button type="button" class="btn btn-secondary" href="{% url 'edit_view' %}" role="button">EDIT
+                    POST</button>
+                <button type="button" class="btn btn-danger" role="button">DELETE POST</button>
+                {% endif %}
                 <hr>
             </div>
         </div>
