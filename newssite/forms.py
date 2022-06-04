@@ -6,7 +6,7 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-    
+
     body = forms.CharField(
         max_length=750,
         widget=forms.Textarea(),

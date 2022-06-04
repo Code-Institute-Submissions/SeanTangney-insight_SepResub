@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic import UpdateView
+from django.views.generic import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils.text import slugify
@@ -83,7 +83,7 @@ class PostLike(View):
         return redirect(reverse('post_detail', args=[slug]))
 
 
-class CreateView(View):
+class CreateView(CreateView):
 
     def get(self, request, *args, **kwargs):
 
