@@ -165,12 +165,20 @@ Posts will paginate into pages of 6.
 
 ## Testing
 
-I used W3 Css Validator to check my website for errors.
+I used W3 Css Validator to check my css for errors.
 <img src="media/images/css_validation.png">
 
+I used W3 Markup Validator to check my HTML for errors
+<img src="media/images/markup_validation.png">
 <hr>
 
+All user stories have expected functionality except for edit and delete posts.
+
 ## Bugs
+
+-   When you edit a post and click submit. The redirect link throws an error. This is unresolved. The post does still edit as it should.
+
+- Delete functionality on a post is not working.
 
 <hr>
 
