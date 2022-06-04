@@ -63,7 +63,7 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "commented": True,
-                "comment_form": comment_form,
+                "comment_form": CommentForm(),
                 "liked": liked
             },
         )
@@ -126,3 +126,11 @@ class EditView(UpdateView):
     model = Post
     template_name = 'edit_view.html'
     form_class = PostForm
+
+
+def delete_post(request, post_id):
+    """Deletes post"""
+    post = get_object_or_404(Post, id=post_id)
+    post.delete()
+    return redirect(reverse(
+        'home'))

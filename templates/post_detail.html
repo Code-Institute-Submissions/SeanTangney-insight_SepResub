@@ -7,13 +7,13 @@
     <div class="masthead">
         <div class="container">
             <div class="row g-0">
-                <div class="col-md-6 masthead-text">
+                <div class="col-md-12 card mb-12  mt-12 masthead-text">
                     <!-- Post title -->
                     <h1 class="post-title">{{ post.title }}</h1>
-                    <p class="post-subtitle">{{ post.author}} | {{ post.created_on }}</p>
+                    <p class="post-subtitle">u/{{ post.author}} | {{ post.created_on }}</p>
                 </div>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image post-image">
+            <div class="col-md-12 card mb-12  mt-12 masthead-image post-image">
                 {% if "placeholder" in post.featured_image.url %}
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%">
@@ -70,8 +70,9 @@
         <div class="row">
             <div class="col">
                 {% if user.is_authenticated and user.id == post.author.id %}
-                <button type="button" class="btn btn-secondary" href="{% url 'edit_view' %}" role="button">EDIT
-                    POST</button>
+                <a href="{% url 'edit_view' post.id %}"><button type=" button" class="btn btn-secondary"
+                        role="button">EDIT
+                        POST</button></a>
                 <button type="button" class="btn btn-danger" role="button">DELETE POST</button>
                 {% endif %}
                 <hr>
@@ -95,6 +96,12 @@
                             <!-- body of comment -->
                             {{ comment.body | linebreaks }}
                         </div>
+                        {% if user.is_authenticated and user.id == comment.author.id %}
+                        <a href="{% url 'edit_comment' %}"><button type="button" class="btn btn-secondary"
+                                role="button">EDIT
+                                COMMENT</button></a>
+                        <button type="button" class="btn btn-danger" role="button">DELETE COMMENT</button>
+                        {% endif %}
                         <hr>
                         <!-- for loop ends here -->
                         {% endfor %}

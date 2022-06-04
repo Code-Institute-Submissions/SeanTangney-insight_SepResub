@@ -8,5 +8,5 @@ urlpatterns = [
          name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('create-view', views.CreateView.as_view(), name='create_view'),
-    path('edit-view', views.EditView.as_view(), name='edit_view'),
+    path('edit-view/<int:pk>', views.EditView.as_view(), name='edit_view'),
     ]

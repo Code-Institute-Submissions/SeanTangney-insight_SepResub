@@ -2,7 +2,6 @@
 {% load static %}
 {% load cloudinary %}
 {% load crispy_forms_tags %}
-{% if user.is_authenticated and user.username == post.author.id %}
 
 
 <div class="post-detail-card">
@@ -12,18 +11,18 @@
                 <h3>Edit Your Post</h3>
                 <p>Posting as u/{{ user.username }}</p>
 
-                <form class="create_view" method="post" enctype="multipart/form-data">
-                    {{ create_view|crispy }}
+                <form class="edit_view" method="post" enctype="multipart/form-data">
+
                     {% csrf_token %}
+                    {{ form|crispy }}
+
                     <div class="submit-container">
-                        <button type="submit" class="btn btn-signup btn-lg submit-btn"
-                            onsubmit="javascript:clear()">Post</button>
+                        <button type="submit" class="btn btn-signup btn-lg submit-btn">Post</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-{% endif %}
 
 {% endblock content %}

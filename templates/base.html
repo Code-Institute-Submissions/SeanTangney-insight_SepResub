@@ -38,9 +38,17 @@
                         width="50" height="40" alt="Insight Logo">
                 </a>
                 <span class="navbar-text text-muted justify-content-md-right d-none d-sm-block ">
-                    <p class="nav-slogan">| Share your news</p>
+                    <p class="nav-slogan">| For All Your GAA News Needs</p>
                 </span>
+
             </div>
+            <span class="display_uname d-flex text-muted justify-content-md-right d-none d-sm-block">
+                {% if user.is_authenticated %}
+                <p>u/{{ user.username }}</p>
+                {% else %}
+                <p>Please Login!</p>
+                {% endif %}
+            </span>
 
             <div class="nav-but d-flex justify-content-right">
                 <div class="collapse navbar-collapse" id="navbarText">

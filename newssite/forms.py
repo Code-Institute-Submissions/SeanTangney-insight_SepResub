@@ -6,6 +6,11 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
+    
+    body = forms.CharField(
+        max_length=750,
+        widget=forms.Textarea(),
+        )
 
 
 class PostForm(forms.ModelForm):
@@ -13,11 +18,10 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'featured_image', 'body',)
 
-    title = forms.CharField(max_length=50)
+    title = forms.CharField(max_length=100)
     body = forms.CharField(
-        max_length=200,
+        max_length=1500,
         widget=forms.Textarea(),
-        help_text="Write your message here!"
         )
 
     def __init__(self, *args, **kwargs):
