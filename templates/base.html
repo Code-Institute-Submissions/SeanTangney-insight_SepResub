@@ -1,8 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <title>Insight</title>
@@ -45,18 +44,18 @@
                     <img src="https://res.cloudinary.com/ds2lfez7n/image/upload/v1654257532/insight_logo_opaque_vyd7th.png"
                         width="50" height="40" alt="Insight Logo">
                 </a>
-                <span class="navbar-text text-muted justify-content-md-right d-none d-sm-block ">
+                <div class="navbar-text text-muted justify-content-md-right d-none d-sm-block ">
                     <p class="nav-slogan">| For All Your GAA News Needs</p>
-                </span>
+                </div>
 
             </div>
-            <span class="display_uname d-flex text-muted justify-content-md-right d-none d-sm-block">
+            <div class="display_uname d-flex text-muted justify-content-md-right d-none d-sm-block">
                 {% if user.is_authenticated %}
                 <p>u/{{ user.username }}</p>
                 {% else %}
                 <p>Please Login!</p>
                 {% endif %}
-            </span>
+            </div>
 
             <div class="nav-but d-flex justify-content-right">
                 <div class="collapse navbar-collapse" id="navbarText">
@@ -124,10 +123,10 @@
         <p class="m-0 text-center text-white">Insight</p>
         <p class="m-0 text-center text-muted">Share Us On Your Social Media </p>
         <p class="m-0 text-center text-white">
-            <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+            <a href="https://www.facebook.com/" class="text-white"><i class="fab fa-facebook-square ms-3"></i></a>
+            <a href="https://www.twitter.com/" class="text-white"><i class="fab fa-twitter-square ms-3"></i></a>
+            <a href="https://www.instagram.com/" class="text-white"><i class="fab fa-instagram-square ms-3"></i></a>
+            <a href="https://www.youtube.com/" class="text-white"><i class="fab fa-youtube-square ms-3"></i></a></p>
     </footer>
 
     <!-- Script Links -->

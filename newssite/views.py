@@ -7,12 +7,17 @@ from django.utils.text import slugify
 from .models import Post
 from .forms import CommentForm, PostForm
 
+# Display Posts on homepage
+
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
+
+# Display Posts in post_detail
 
 
 class PostDetail(View):
@@ -70,6 +75,9 @@ class PostDetail(View):
         return HttpResponseRedirect(reverse('post_detail'))
 
 
+# Add A Like To A Post
+
+
 class PostLike(View):
 
     def post(self, request, slug):
@@ -81,6 +89,9 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return redirect(reverse('post_detail', args=[slug]))
+
+
+# View for creating posts
 
 
 class CreateView(CreateView):
@@ -121,11 +132,23 @@ class CreateView(CreateView):
         )
 
 
+# Edit Posts
+
+
 class EditView(UpdateView):
     """ Edit Post """
     model = Post
     template_name = 'edit_view.html'
     form_class = PostForm
+
+    def get_success_url(self):
+        edit_view = EditView
+        return reverse(edit_view, kwargs={
+            'edit-view/<int:pk>': self.object.slug
+            })
+
+
+# Delete Post
 
 
 def delete_post(request, post_id):
