@@ -188,6 +188,11 @@ I used Github and Heroku to deploy my website.
 
 <hr>
 
+## Media
+
+- All Post Images and articles are from Rte.ie
+- I think therefore i blog tutorial was used for setup and guidance.
+
 ## Credits
 
 - Tutors at CodeInstitute for their help with errors.
