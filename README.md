@@ -165,6 +165,9 @@ Posts will paginate into pages of 6.
 
 ## Testing
 
+I used W3 Css Validator to check my website for errors.
+<img src="media/images/css_validation.png">
+
 <hr>
 
 ## Bugs
@@ -173,7 +176,12 @@ Posts will paginate into pages of 6.
 
 ## Deployment
 
+I used Github and Heroku to deploy my website.
+
 <hr>
 
 ## Credits
+
+- Tutors at CodeInstitute for their help with errors.
+- My mentor for feedback.
 
