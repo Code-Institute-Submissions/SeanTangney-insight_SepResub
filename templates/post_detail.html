@@ -74,7 +74,8 @@
                 <a href="{% url 'edit_post' post.id %}"><button type=" button" class="btn btn-secondary"
                         role="button">EDIT
                         POST</button></a>
-                <button type="button" class="btn btn-danger" role="button">DELETE POST</button>
+                <a href="{% url 'delete_post' post.id %}"><button type="button" class="btn btn-danger"
+                        role="button">DELETE POST</button></a>
                 {% endif %}
                 <hr>
             </div>
