@@ -33,7 +33,7 @@ DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ["insight2022.herokuapp.com", "localhost"]
-CSRF_TRUSTED_ORIGINS = ['https://insight2022.herokuapp.com', 'https://8000-seantangney-insight-1wwmyzj4tky.ws-eu46.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://insight2022.herokuapp.com', 'https://8000-seantangney-insight-1wwmyzj4tky.ws-eu63.gitpod.io']
 
 
 # Application definition

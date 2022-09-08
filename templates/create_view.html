@@ -15,8 +15,8 @@
                 <p>Posting as u/{{ user.username }}</p>
 
                 <form class="create_view" method="post" enctype="multipart/form-data">
-                    {{ create_view|crispy }}
                     {% csrf_token %}
+                    {{ create_view|crispy }}
                     <div class="submit-container">
                         <button type="submit" class="btn btn-signup btn-lg submit-btn"
                             onsubmit="javascript:clear()">Post</button>

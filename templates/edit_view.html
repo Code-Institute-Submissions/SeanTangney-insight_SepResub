@@ -12,7 +12,8 @@
                 <h3>Edit Your Post</h3>
                 <p>Posting as u/{{ user.username }}</p>
 
-                <form class="edit_view" method="post" enctype="multipart/form-data">
+                <form class="edit_view" method="POST" action="{% url 'edit_post' post.id %}"
+                    enctype="multipart/form-data">
 
                     {% csrf_token %}
                     {{ form|crispy }}

@@ -139,14 +139,16 @@ class EditView(UpdateView):
     """ Edit Post """
     model = Post
     template_name = 'edit_view.html'
-    form_class = PostForm
+    fields = ['title', 'body', 'featured_image']
 
     def get_success_url(self):
-        edit_view = EditView
-        return reverse(edit_view, kwargs={
-            'edit-view/<int:pk>': self.object.slug
-            })
-
+        try:
+            url = self.object.get_absolute_url()
+        except AttributeError:
+            raise ImproperlyConfigured(
+                "No URL to redirect to.  Either provide a url or define"
+                " a get_absolute_url method on the Model.")
+        return url
 
 # Delete Post
 
