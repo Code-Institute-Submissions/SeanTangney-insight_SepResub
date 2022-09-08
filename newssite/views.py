@@ -150,6 +150,7 @@ class EditView(UpdateView):
                 " a get_absolute_url method on the Model.")
         return url
 
+
 # Delete Post
 
 
