@@ -35,6 +35,13 @@ body {
     color: red;
 }
 
+.heart-bg {
+    background-color: #def1f1a2;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 .read-more {
     text-decoration: none;
     text-align: right;
@@ -93,6 +100,7 @@ body {
 .post-detail-card {
     width: 50vw;
     margin: 0 25vw;
+    background-color: #def1f1a2;
 }
 
 

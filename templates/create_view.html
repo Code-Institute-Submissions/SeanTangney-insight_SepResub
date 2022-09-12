@@ -7,13 +7,14 @@
 
 <!-- Form For Creating A Post -->
 
-<div class="post-detail-card">
+<div class="post-detail-card mt-5 border rounded-2">
     <div class="row">
         <div class="col-md-12 card mb-12 mt-12">
             <div class="card-body">
-                <h3>Create A Post</h3>
-                <p>Posting as u/{{ user.username }}</p>
-
+                <h3 class="text-capitalized text-center">Create A Post</h3>
+                <p class="text-center">Posting as u/{{ user.username }}</p>
+                <hr>
+                <br>
                 <form class="create_view" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ create_view|crispy }}
