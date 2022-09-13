@@ -29,9 +29,9 @@
     -   #### Frequent Visitor Goals
 
         1. As a Frequent Visitor, I want to be able to log in to my account.
-        1. As a Frequent Visitor, I want to see if there are any newly added posts.
-        1. As a Frequent Visitor, I want to be able to create new posts.
-        1. As a Frequent Visitor, check how popular my posts have gotten.
+        2. As a Frequent Visitor, I want to see if there are any newly added posts.
+        3. As a Frequent Visitor, I want to be able to create new posts.
+        4. As a Frequent Visitor, check how popular my posts have gotten.
 
     -   #### Site Maintainer / Admin Goals
 
@@ -172,15 +172,68 @@ I used W3 Markup Validator to check my HTML for errors
 <img src="media/images/markup_validation.png">
 <hr>
 
-All user stories have expected functionality except for edit and delete posts.
 
-## Bugs
+# Testing User Stories from UX Section
 
--   When you edit a post and click submit. The redirect link throws an error. This is unresolved. The post does still edit as it should.
+-   ## First Time Visitor Goals
 
-- Delete functionality on a post is not working.
+1. As a First Time Visitor, I want to be able to view a list of posts so i can select one to read.
 
-<hr>
+    - As a first time visitor on the site , the first thing you will see is a a list of posts that you can select to read.
+
+2. As a First Time Visitor, I want to be able to view the number of likes so i can see how popular a post is.
+
+    - As a first time visitor on the site , whether you're looking at the index.html or at the post_detail.html you will be able to see how many likes a particular post has.
+
+3. As a First Time Visitor, I want to be able to create an account on the website.
+
+    - As a first time visitor on the site , you will be able to register for an account by pressing the register button on the navbar.
+
+4. As a First Time Visitor, I want to be able to like and comment on posts
+
+    - As a first time visitor on the site , if you have created your account, you will be able to like and comment on posts.
+
+5. As a First Time Visitor, I want to be able to unlike and edit/delete posts.
+
+    - As a first time visitor on the site , if you are signed in and have previously liked a post, you will be able to unlike it by pressing on it a second time. 
+
+    - As a first time visitor on the site, if you are signed in and have previously created a post, you will be shown additional options on that post when you click in to read it in full. You can edit/delete the post from here.
+
+
+-   ## Returning Visitor Goals
+
+1. As a Returning Visitor, I want to be able to log in to my account.
+
+    - As a Returning Visitor, I can navigate to the login page from the navbar and sign in to my account.
+
+
+2. As a Returning Visitor, I want to see if there are any newly added posts.
+
+    - 
+
+
+3. As a Returning Visitor, I want to be able to create posts.
+
+    - 
+    
+
+-   ## Frequent Visitor Goals
+
+1. As a Frequent Visitor, I want to be able to log in to my account.
+
+    - 
+
+2. As a Frequent Visitor, I want to see if there are any newly added posts.
+
+    - 
+
+3. As a Frequent Visitor, I want to be able to create new posts.
+
+    - 
+
+4. As a Frequent Visitor, check how popular my posts have gotten.
+
+    - 
 
 ## Deployment
 
