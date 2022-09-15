@@ -173,6 +173,30 @@ I used W3 Markup Validator to check my HTML for errors
 <hr>
 
 
+# Website Manual Testing
+## All Listed Tests Were Performed By Me.
+
+1. Mouse will turn to pointer when hovering over links.
+2. All Navbar links are working.
+3. Navbar will display "Please Login" to users that havnt signed in to an account.
+4. Navbar will display username when a user is signed in to their account.
+5. Users are able to see post images, titles, likes, authors and creation date of each post on the main page.
+6. The links to the post detail pages work.
+7. Post detail page shows the full article content and comments.
+8. Unauthorised user are unable to comment or like a post.
+9. Liking a post will update the like-count on the mainpage and the post detail page.
+10. The site will paginate and add a next page button at the bottom when there is more than 6 posts.
+11. Users get a sign in success toast.
+12. The login button changes to a logout button upon authorisation.
+13. If the authorised user created a post they get the edit and delete buttons.
+14. If a post is made without adding an image, the site logo will be dislayed on the main page but not in the post detail.
+15. Users can create a post using the button in the navbar.
+16. The logout button will ask to confirm and give a success toast on confirmation.
+17. All footer links work and open in a new tab.
+18. The django admin panel updates accordingly when information is changed.
+
+
+
 # Testing User Stories from UX Section
 
 -   ## First Time Visitor Goals
@@ -209,31 +233,31 @@ I used W3 Markup Validator to check my HTML for errors
 
 2. As a Returning Visitor, I want to see if there are any newly added posts.
 
-    - 
+    - As a Returning Visitor, I can see the newly added posts on the main page.
 
 
 3. As a Returning Visitor, I want to be able to create posts.
 
-    - 
-    
+    - As a Returning Visitor, if i have an account i can create posts.
+
 
 -   ## Frequent Visitor Goals
 
 1. As a Frequent Visitor, I want to be able to log in to my account.
 
-    - 
+    -  As a Frequent Visitor to the site i can log in if i have registered for an account.
 
 2. As a Frequent Visitor, I want to see if there are any newly added posts.
 
-    - 
+    - As a Frequent Visitor to the site i can see on the main page any new posts that are added.
 
 3. As a Frequent Visitor, I want to be able to create new posts.
 
-    - 
+    - As a Frequent Visitor to the site, once logged in i can create a new post by pressing on the create post button on the navbar.
 
 4. As a Frequent Visitor, check how popular my posts have gotten.
 
-    - 
+    - As a Frequent Visitor to the site, i can see on the main page and on the post detail page how many likes a post has.
 
 ## Deployment
 
