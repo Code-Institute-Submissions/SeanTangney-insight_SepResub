@@ -33,30 +33,27 @@
                     <div class="row">
 
                         <div class="col-1">
-                            <strong>
-                                {% if user.is_authenticated %}
-                                <form class="d-inline heart-bg" action="{%url 'post_like' post.slug %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if liked %}
+                            {% if user.is_authenticated %}
+                            <form class="d-inline heart-bg" action="{%url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
 
-                                    <button type="submit" name="newspost_id" value="{{post.slug}}"
-                                        class="btn-like heart-bg"><i class="fas fa-heart heart-bg"></i></button>
+                                <button type="submit" name="newspost_id" value="{{post.slug}}"
+                                    class="btn-like heart-bg"><i class="fas fa-heart heart-bg"></i></button>
 
-                                    {% else %}
+                                {% else %}
 
-                                    <button type="submit" name="newspost_id" value="{{post.slug}}"
-                                        class="btn-like heart-bg"><i class="far fa-heart heart-bg"></i></button>
+                                <button type="submit" name="newspost_id" value="{{post.slug}}"
+                                    class="btn-like heart-bg"><i class="far fa-heart heart-bg"></i></button>
 
-                                    {% endif %}
-
-                                </form>
+                                {% endif %}
                                 {% else%}
 
                                 <span class="text-secondary"><i class="far fa-heart"></i></span>
                                 {% endif %}
-                                <span class="text-secondary">{{ post.number_of_likes }}</i></span>
+                                <span class="text-secondary">{{ post.number_of_likes }}</span>
+                            </form>
 
-                            </strong>
                         </div>
                         <div class="col-1">
                             {% with comments.count as total_comments %}
@@ -71,11 +68,11 @@
         <div class="row">
             <div class="col">
                 {% if user.is_authenticated and user.id == post.author.id %}
-                <a href="{% url 'edit_post' post.id %}"><button type=" button" class="btn btn-secondary"
-                        role="button">EDIT
-                        POST</button></a>
-                <a href="{% url 'delete_post' post.id %}"><button type="button" class="btn btn-danger"
-                        role="button">DELETE POST</button></a>
+                <a class="btn btn-secondary text-decoration-none text-white" href="{% url 'edit_post' post.id %}"
+                    role="button">EDIT POST</a>
+                <a class="btn btn-danger text-decoration-none text-white" role="button"
+                    href="{% url 'delete_post' post.id %}">DELETE
+                    POST</a>
                 {% endif %}
                 <hr>
             </div>
@@ -99,10 +96,9 @@
                             {{ comment.body | linebreaks }}
                         </div>
                         {% if user.is_authenticated and user.id == comment.author.id %}
-                        <a href="{% url 'edit_comment' %}"><button type="button" class="btn btn-secondary"
-                                role="button">EDIT
+                        <a href="{% url 'edit_comment' %}"><button class="btn btn-secondary" role="button">EDIT
                                 COMMENT</button></a>
-                        <button type="button" class="btn btn-danger" role="button">DELETE COMMENT</button>
+                        <button class="btn btn-danger" role="button">DELETE COMMENT</button>
                         {% endif %}
                         <hr>
                         <!-- for loop ends here -->
