@@ -131,7 +131,7 @@ Posts will paginate into pages of 6.
 ### Features i would like to implement in the future
 
 -   I would like to implement different categories - Teams, Sports, Etc.
--   I would like to implement a search feaeture to look up relevant posts.
+-   I would like to implement a search feature to look up relevant posts.
 
 <hr>
 
@@ -171,9 +171,10 @@ I used W3 Css Validator to check my css for errors.
 I used W3 Markup Validator to check my HTML for errors
 - I pasted the html from source code of every page on the site and after a couple of changes, it retured no errors via direct input.
 <hr>
+All CRED Functionality Working As Its Expected To
 
 
-# Website Manual Testing
+# Manual Testing
 ## All Listed Tests Were Performed By Me.
 
 1. Mouse will turn to pointer when hovering over links.
@@ -195,6 +196,12 @@ I used W3 Markup Validator to check my HTML for errors
 17. All footer links work and open in a new tab.
 18. The django admin panel updates accordingly when information is changed.
 
+## Javascript Testing
+1. The toasts will timeout after 3 seconds if not dismissed manually.
+2. The forms will clear after a refresh.
+
+# Python Testing
+- Python tests were covered in the manual testing section
 
 
 # Testing User Stories from UX Section
