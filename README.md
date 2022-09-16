@@ -166,10 +166,10 @@ Posts will paginate into pages of 6.
 ## Testing
 
 I used W3 Css Validator to check my css for errors.
-<img src="media/images/css_validation.png">
+- I pasted my css code into the direct input box and it returned no errors.
 
 I used W3 Markup Validator to check my HTML for errors
-<img src="media/images/markup_validation.png">
+- I pasted the html from source code of every page on the site and after a couple of changes, it retured no errors via direct input.
 <hr>
 
 
@@ -262,6 +262,34 @@ I used W3 Markup Validator to check my HTML for errors
 ## Deployment
 
 I used Github and Heroku to deploy my website.
+- The steps i used are as follows:
+    1. Check requirements.txt file by running the following command in the terminal: pip3 freeze > requirements.txt
+    2. Check project has been fully committed and pushed to git.
+    3. On heroku create a new app.
+    4. Name your app.
+    5. Go to settings
+    6. Go to config vars and click reveal config vars
+    7. Select python as a build pack.
+    8. Select node.js and click save.
+    9. Press deploy
+    10. From the deployment method select GitHub
+    11. Click connect to github.
+    12. Search for your project name and connect to it.
+    13. Deploy branch.
+    14. Open App at the top.
+
+I used cloudinary to host my staticfiles
+- I updated my settings file with 
+    1. Cloudinary to the INSTALLED_APPS list
+    2. STATICFILE_STORAGE
+    3. STATICFILES_DIRS
+    4. STATIC_ROOT
+    5. MEDIA_URL
+    6. DEFAULT_FILE_STORAGE
+    7. TEMPLATES_DIR
+    8. Update DIRS in TEMPLATES with TEMPLATES_DIR
+    9. Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
 
 <hr>
 
